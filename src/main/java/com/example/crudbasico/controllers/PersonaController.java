@@ -23,4 +23,8 @@ public class PersonaController {
     public Persona mostrarUno(@PathVariable Long id){
         return personaRepository.findById(id).get();
     }
+    @DeleteMapping("api/persona/{id}")
+    public void eliminar(@PathVariable Long id){
+        personaRepository.deleteById(id);
+    }
 }
